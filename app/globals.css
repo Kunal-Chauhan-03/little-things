@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --espresso: #211814;
+  --coffee: #6F4E37;
+  --blush: #E8A0B5;
+  --cream: #F7EDE3;
+  --champagne: #D6B27C;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--champagne) transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--espresso);
+  color: var(--cream);
+  overflow-x: hidden;
+  position: relative;
+}
+
+.section {
+  position: relative;
+  min-height: 100svh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.5rem;
+}
+
+.paper-texture {
+  position: relative;
+}
+
+.paper-texture::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.12;
+  mix-blend-mode: overlay;
+  background-image: url("/illustrations/grain.svg");
+  background-size: 280px;
+  z-index: 1;
+}
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("/illustrations/grain.svg");
+  background-size: 280px;
+}
+
+/* Scrapbook photo styling */
+.polaroid {
+  background: #fcf8f3;
+  padding: 0.75rem 0.75rem 2.5rem 0.75rem;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 3px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  border: 1px solid rgba(214, 178, 124, 0.15);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.polaroid:hover {
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.55), 0 6px 16px rgba(232, 160, 181, 0.15);
+}
+
+.underline-fade {
+  background-image: linear-gradient(var(--champagne), var(--champagne));
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  background-position: left bottom;
+  transition: background-size 0.6s ease;
+}
+
+.underline-fade.in-view {
+  background-size: 100% 2px;
+}
+
+/* Strictly Coffee & Brown Rich Background Spotlights */
+.bg-entry-spotlight {
+  background: radial-gradient(circle at 50% 40%, rgba(111, 78, 55, 0.45) 0%, rgba(55, 38, 28, 0.85) 50%, rgba(33, 24, 20, 1) 90%);
+}
+
+.bg-not-obvious-spotlight {
+  background: radial-gradient(circle at 50% 50%, rgba(125, 85, 60, 0.42) 0%, rgba(60, 40, 30, 0.85) 60%, rgba(33, 24, 20, 1) 100%);
+}
+
+.bg-memory-spotlight {
+  background: radial-gradient(circle at 50% 40%, rgba(135, 92, 63, 0.45) 0%, rgba(65, 43, 31, 0.85) 65%, rgba(33, 24, 20, 1) 100%);
+}
+
+.bg-attack-spotlight {
+  background: radial-gradient(circle at 50% 45%, rgba(120, 75, 52, 0.45) 0%, rgba(60, 37, 27, 0.85) 60%, rgba(33, 24, 20, 1) 100%);
+}
+
+.bg-look-around-spotlight {
+  background: radial-gradient(circle at 50% 50%, rgba(140, 95, 65, 0.45) 0%, rgba(70, 46, 32, 0.85) 60%, rgba(33, 24, 20, 1) 100%);
+}
+
+.bg-photo-moment-spotlight {
+  background: radial-gradient(circle at 50% 40%, rgba(130, 88, 60, 0.42) 0%, rgba(62, 41, 29, 0.85) 65%, rgba(33, 24, 20, 1) 100%);
+}
+
+.bg-favorite-spotlight {
+  background: radial-gradient(circle at 50% 35%, rgba(138, 90, 62, 0.45) 0%, rgba(68, 44, 31, 0.85) 65%, rgba(33, 24, 20, 1) 100%);
+}
+
+.bg-together-spotlight {
+  background: radial-gradient(circle at 50% 50%, rgba(145, 98, 67, 0.45) 0%, rgba(72, 47, 33, 0.85) 65%, rgba(33, 24, 20, 1) 100%);
+}
+
+.bg-voice-spotlight {
+  background: radial-gradient(circle at 50% 45%, rgba(125, 82, 57, 0.42) 0%, rgba(62, 40, 28, 0.85) 65%, rgba(33, 24, 20, 1) 100%);
+}
+
+.bg-quiet-spotlight {
+  background: radial-gradient(circle at 50% 50%, rgba(115, 76, 53, 0.4) 0%, rgba(58, 38, 27, 0.85) 65%, rgba(33, 24, 20, 1) 100%);
+}
+
+.bg-important-spotlight {
+  background: radial-gradient(circle at 50% 35%, rgba(140, 92, 63, 0.45) 0%, rgba(70, 45, 31, 0.85) 50%, rgba(33, 24, 20, 1) 90%);
+}
+
+.bg-drink-spotlight {
+  background: radial-gradient(circle at 50% 40%, rgba(120, 80, 55, 0.42) 0%, rgba(60, 40, 28, 0.85) 65%, rgba(33, 24, 20, 1) 100%);
+}
+
+.bg-birthday-spotlight {
+  background: radial-gradient(circle at 50% 30%, rgba(150, 102, 68, 0.48) 0%, rgba(80, 52, 35, 0.85) 45%, rgba(33, 24, 20, 1) 90%);
+}
+
+.bg-future-spotlight {
+  background: radial-gradient(circle at 50% 45%, rgba(135, 90, 62, 0.45) 0%, rgba(68, 44, 30, 0.85) 65%, rgba(33, 24, 20, 1) 100%);
+}
+
+.bg-apology-spotlight {
+  background: radial-gradient(circle at 50% 40%, rgba(130, 86, 59, 0.45) 0%, rgba(65, 42, 29, 0.85) 65%, rgba(33, 24, 20, 1) 100%);
+}
+
+.bg-final-spotlight {
+  background: radial-gradient(circle at 50% 50%, rgba(145, 96, 65, 0.48) 0%, rgba(75, 48, 32, 0.85) 65%, rgba(33, 24, 20, 1) 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: var(--blush);
+  color: var(--espresso);
+}
